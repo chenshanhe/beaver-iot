@@ -186,6 +186,11 @@ public class DashboardService implements DashboardServiceProvider {
                 .orElseThrow(() -> ServiceException.with(ErrorCode.DATA_NO_FOUND).detailMessage("dashboard not exist").build());
     }
 
+    @Override
+    public boolean isDashboardExist(Long dashboardId) {
+        return getDashboardById(dashboardId) != null;
+    }
+
     public CanvasDTO createDashboardCanvas(DashboardCanvasCreateRequest request, Long dashboardId) {
         DashboardPO dashboardPO = getDashboardById(dashboardId);
         return canvasFacade.createCanvas(request.getName(), CanvasAttachType.DASHBOARD, dashboardPO.getId().toString());

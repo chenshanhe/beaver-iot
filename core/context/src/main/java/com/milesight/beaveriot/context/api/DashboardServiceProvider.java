@@ -11,4 +11,5 @@ import com.milesight.beaveriot.context.integration.model.response.CreateDashboar
 public interface DashboardServiceProvider {
     CreateDashboardResponse createDashboard(DashboardInfoRequest dashboardInfoRequest);
     void deleteDashboard(DashboardBatchDeleteRequest deleteRequest);
+    boolean isDashboardExist(Long dashboardId);
 }
