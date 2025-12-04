@@ -265,6 +265,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.milesight.beaveriot.integrations</groupId>
+            <artifactId>odm-shrine-toilet</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- unit test -->
         <!--<dependency>
             <groupId>org.junit.platform</groupId>

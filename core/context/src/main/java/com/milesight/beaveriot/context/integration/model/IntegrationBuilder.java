@@ -102,6 +102,11 @@ public class IntegrationBuilder {
             return this;
         }
 
+        public IntegrationConfigBuilder visible(Boolean visible) {
+            this.integrationBuilder.integration.setVisible(visible);
+            return this;
+        }
+
         public IntegrationConfigBuilder name(String name) {
             this.integrationBuilder.integration.setName(name);
             return this;

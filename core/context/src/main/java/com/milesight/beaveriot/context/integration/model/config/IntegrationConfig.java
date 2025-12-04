@@ -23,6 +23,8 @@ public class IntegrationConfig {
 
     private boolean enabled = true;
 
+    private boolean visible = true;
+
     private String flowExchangeDownHandler;
 
     private String entityIdentifierAddDevice;
@@ -51,6 +53,7 @@ public class IntegrationConfig {
                 .description(description)
                 .iconUrl(iconUrl)
                 .enabled(enabled)
+                .visible(visible)
                 .entityIdentifierAddDevice(entityIdentifierAddDevice)
                 .entityIdentifierDeleteDevice(entityIdentifierDeleteDevice)
                 .end()
