@@ -1,7 +1,7 @@
-package com.milesight.beaveriot.canvas.model.request;
+package com.milesight.beaveriot.context.integration.model.request;
 
-import com.milesight.beaveriot.canvas.model.dto.CanvasWidgetDTO;
-import com.milesight.beaveriot.canvas.constants.CanvasDataFieldConstants;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasWidgetDTO;
+import com.milesight.beaveriot.context.integration.constants.CanvasDataFieldConstants;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

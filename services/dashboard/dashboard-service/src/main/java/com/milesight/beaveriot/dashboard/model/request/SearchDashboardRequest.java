@@ -1,7 +1,6 @@
 package com.milesight.beaveriot.dashboard.model.request;
 
-import com.milesight.beaveriot.dashboard.constants.DashboardDataFieldConstants;
-import jakarta.validation.constraints.NotBlank;
+import com.milesight.beaveriot.context.integration.constants.DashboardDataFieldConstants;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 

@@ -1,10 +1,9 @@
 package com.milesight.beaveriot.dashboard.po;
 
-import com.milesight.beaveriot.dashboard.enums.DashboardCoverType;
+import com.milesight.beaveriot.context.integration.enums.DashboardCoverType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.FieldNameConstants;
-import org.hibernate.annotations.DynamicInsert;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;

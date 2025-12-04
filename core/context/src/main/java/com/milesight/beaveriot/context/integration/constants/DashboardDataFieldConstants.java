@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.dashboard.constants;
+package com.milesight.beaveriot.context.integration.constants;
 
 /**
  * DashboardDataFieldConstants class.

@@ -2,13 +2,13 @@ package com.milesight.beaveriot.dashboard.controller;
 
 import com.milesight.beaveriot.base.response.ResponseBody;
 import com.milesight.beaveriot.base.response.ResponseBuilder;
-import com.milesight.beaveriot.canvas.model.dto.CanvasDTO;
-import com.milesight.beaveriot.dashboard.model.request.DashboardBatchDeleteRequest;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
+import com.milesight.beaveriot.context.integration.model.request.DashboardBatchDeleteRequest;
 import com.milesight.beaveriot.dashboard.model.request.DashboardCanvasBatchDeleteRequest;
 import com.milesight.beaveriot.dashboard.model.request.DashboardCanvasCreateRequest;
-import com.milesight.beaveriot.dashboard.model.request.DashboardInfoRequest;
+import com.milesight.beaveriot.context.integration.model.request.DashboardInfoRequest;
 import com.milesight.beaveriot.dashboard.model.request.SearchDashboardRequest;
-import com.milesight.beaveriot.dashboard.model.response.CreateDashboardResponse;
+import com.milesight.beaveriot.context.integration.model.response.CreateDashboardResponse;
 import com.milesight.beaveriot.dashboard.model.response.DashboardCanvasItemResponse;
 import com.milesight.beaveriot.dashboard.model.response.DashboardListItemResponse;
 import com.milesight.beaveriot.dashboard.model.response.MainDashboardCanvasResponse;

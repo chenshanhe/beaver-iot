@@ -1,7 +1,7 @@
-package com.milesight.beaveriot.dashboard.model.request;
+package com.milesight.beaveriot.context.integration.model.request;
 
-import com.milesight.beaveriot.dashboard.constants.DashboardDataFieldConstants;
-import com.milesight.beaveriot.dashboard.enums.DashboardCoverType;
+import com.milesight.beaveriot.context.integration.constants.DashboardDataFieldConstants;
+import com.milesight.beaveriot.context.integration.enums.DashboardCoverType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;

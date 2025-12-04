@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.dashboard.model.request;
+package com.milesight.beaveriot.context.integration.model.request;
 
 import lombok.Data;
 

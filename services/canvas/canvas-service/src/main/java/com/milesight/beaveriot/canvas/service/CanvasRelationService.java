@@ -2,7 +2,7 @@ package com.milesight.beaveriot.canvas.service;
 
 import com.milesight.beaveriot.base.page.Sorts;
 import com.milesight.beaveriot.base.utils.snowflake.SnowflakeUtil;
-import com.milesight.beaveriot.canvas.constants.CanvasDataFieldConstants;
+import com.milesight.beaveriot.context.integration.constants.CanvasDataFieldConstants;
 import com.milesight.beaveriot.canvas.po.CanvasDevicePO;
 import com.milesight.beaveriot.canvas.po.CanvasEntityPO;
 import com.milesight.beaveriot.canvas.repository.CanvasDeviceRepository;

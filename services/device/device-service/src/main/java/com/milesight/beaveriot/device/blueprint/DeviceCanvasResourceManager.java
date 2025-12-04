@@ -13,10 +13,10 @@ import com.milesight.beaveriot.blueprint.core.chart.node.resource.DeviceCanvasRe
 import com.milesight.beaveriot.blueprint.core.enums.BlueprintErrorCode;
 import com.milesight.beaveriot.blueprint.core.model.BindResource;
 import com.milesight.beaveriot.blueprint.core.utils.BlueprintUtils;
-import com.milesight.beaveriot.canvas.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
 import com.milesight.beaveriot.canvas.facade.ICanvasFacade;
-import com.milesight.beaveriot.canvas.model.dto.CanvasWidgetDTO;
-import com.milesight.beaveriot.canvas.model.request.CanvasUpdateRequest;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasWidgetDTO;
+import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateRequest;
 import com.milesight.beaveriot.device.service.DeviceCanvasService;
 import com.milesight.beaveriot.permission.enums.DataPermissionType;
 import com.milesight.beaveriot.permission.enums.OperationPermissionCode;

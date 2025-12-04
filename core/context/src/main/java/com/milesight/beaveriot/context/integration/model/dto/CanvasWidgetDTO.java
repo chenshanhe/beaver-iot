@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.canvas.model.dto;
+package com.milesight.beaveriot.context.integration.model.dto;
 
 import lombok.Data;
 

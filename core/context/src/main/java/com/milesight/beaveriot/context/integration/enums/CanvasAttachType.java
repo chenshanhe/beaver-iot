@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.canvas.enums;
+package com.milesight.beaveriot.context.integration.enums;
 
 /**
  * CanvasAttachType class.
@@ -7,7 +7,7 @@ package com.milesight.beaveriot.canvas.enums;
  * @date 2025/9/8
  */
 public enum CanvasAttachType {
-    DASHBOARD, DEVICE;
+    DASHBOARD, CANVAS, DEVICE;
 
     @Override
     public String toString() {

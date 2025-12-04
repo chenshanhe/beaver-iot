@@ -1,6 +1,6 @@
 package com.milesight.beaveriot.dashboard.model.response;
 
-import com.milesight.beaveriot.canvas.model.dto.CanvasDTO;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

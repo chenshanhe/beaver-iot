@@ -1,6 +1,6 @@
 package com.milesight.beaveriot.canvas.service;
 
-import com.milesight.beaveriot.canvas.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
 import com.milesight.beaveriot.canvas.facade.ICanvasFacade;
 import com.milesight.beaveriot.canvas.po.CanvasPO;
 import com.milesight.beaveriot.canvas.repository.CanvasRepository;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * CanvasEventListener class.

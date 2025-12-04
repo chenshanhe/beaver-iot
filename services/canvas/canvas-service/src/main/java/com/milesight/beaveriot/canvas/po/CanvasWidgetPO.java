@@ -1,6 +1,6 @@
 package com.milesight.beaveriot.canvas.po;
 
-import com.milesight.beaveriot.canvas.constants.CanvasDataFieldConstants;
+import com.milesight.beaveriot.context.integration.constants.CanvasDataFieldConstants;
 import com.milesight.beaveriot.data.support.MapJsonConverter;
 import jakarta.persistence.*;
 import lombok.Data;

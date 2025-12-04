@@ -3,19 +3,19 @@ package com.milesight.beaveriot.dashboard.service;
 import com.milesight.beaveriot.base.enums.ErrorCode;
 import com.milesight.beaveriot.base.exception.ServiceException;
 import com.milesight.beaveriot.base.utils.snowflake.SnowflakeUtil;
-import com.milesight.beaveriot.canvas.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.api.DashboardServiceProvider;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
 import com.milesight.beaveriot.canvas.facade.ICanvasFacade;
-import com.milesight.beaveriot.canvas.model.dto.CanvasDTO;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
 import com.milesight.beaveriot.context.security.SecurityUserContext;
 import com.milesight.beaveriot.dashboard.convert.DashboardConvert;
-import com.milesight.beaveriot.dashboard.dto.DashboardDTO;
 import com.milesight.beaveriot.dashboard.enums.DashboardErrorCode;
 import com.milesight.beaveriot.dashboard.event.DashboardEvent;
-import com.milesight.beaveriot.dashboard.model.request.DashboardBatchDeleteRequest;
+import com.milesight.beaveriot.context.integration.model.request.DashboardBatchDeleteRequest;
 import com.milesight.beaveriot.dashboard.model.request.DashboardCanvasCreateRequest;
-import com.milesight.beaveriot.dashboard.model.request.DashboardInfoRequest;
+import com.milesight.beaveriot.context.integration.model.request.DashboardInfoRequest;
 import com.milesight.beaveriot.dashboard.model.request.SearchDashboardRequest;
-import com.milesight.beaveriot.dashboard.model.response.CreateDashboardResponse;
+import com.milesight.beaveriot.context.integration.model.response.CreateDashboardResponse;
 import com.milesight.beaveriot.dashboard.model.response.DashboardCanvasItemResponse;
 import com.milesight.beaveriot.dashboard.model.response.DashboardListItemResponse;
 import com.milesight.beaveriot.dashboard.model.response.MainDashboardCanvasResponse;
@@ -27,12 +27,10 @@ import com.milesight.beaveriot.eventbus.EventBus;
 import com.milesight.beaveriot.user.enums.ResourceType;
 import com.milesight.beaveriot.user.facade.IUserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -46,7 +44,7 @@ import java.util.stream.Collectors;
  * @date 2024/10/14 14:46
  */
 @Service
-public class DashboardService {
+public class DashboardService implements DashboardServiceProvider {
 
     @Autowired
     private DashboardRepository dashboardRepository;
@@ -67,6 +65,7 @@ public class DashboardService {
     private EventBus<DashboardEvent> eventBus;
 
     @Transactional(rollbackFor = Throwable.class)
+    @Override
     public CreateDashboardResponse createDashboard(DashboardInfoRequest dashboardInfoRequest) {
         // check dashboard name
         String name = dashboardInfoRequest.getName().trim();
@@ -123,6 +122,7 @@ public class DashboardService {
     }
 
     @Transactional(rollbackFor = Exception.class)
+    @Override
     public void deleteDashboard(DashboardBatchDeleteRequest deleteRequest) {
         // get all matched dashboards
         List<DashboardPO> dashboardPOList = dashboardRepository

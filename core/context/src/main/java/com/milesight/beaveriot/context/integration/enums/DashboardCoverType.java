@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.dashboard.enums;
+package com.milesight.beaveriot.context.integration.enums;
 
 /**
  * DashboardCoverType class.

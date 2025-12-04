@@ -2,7 +2,7 @@ package com.milesight.beaveriot.canvas.controller;
 
 import com.milesight.beaveriot.base.response.ResponseBody;
 import com.milesight.beaveriot.base.response.ResponseBuilder;
-import com.milesight.beaveriot.canvas.model.request.CanvasUpdateRequest;
+import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateRequest;
 import com.milesight.beaveriot.canvas.model.response.CanvasResponse;
 import com.milesight.beaveriot.canvas.service.CanvasService;
 import jakarta.validation.Valid;

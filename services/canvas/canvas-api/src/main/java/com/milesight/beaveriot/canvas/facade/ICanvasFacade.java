@@ -1,8 +1,8 @@
 package com.milesight.beaveriot.canvas.facade;
 
-import com.milesight.beaveriot.canvas.enums.CanvasAttachType;
-import com.milesight.beaveriot.canvas.model.dto.CanvasDTO;
-import com.milesight.beaveriot.canvas.model.request.CanvasUpdateRequest;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
+import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateRequest;
 import com.milesight.beaveriot.canvas.model.response.CanvasResponse;
 
 import java.util.List;

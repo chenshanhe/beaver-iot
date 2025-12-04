@@ -1,6 +1,6 @@
 package com.milesight.beaveriot.canvas.po;
 
-import com.milesight.beaveriot.canvas.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.FieldNameConstants;

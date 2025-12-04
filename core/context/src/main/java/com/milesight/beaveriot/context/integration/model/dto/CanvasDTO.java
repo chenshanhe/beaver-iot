@@ -1,6 +1,6 @@
-package com.milesight.beaveriot.canvas.model.dto;
+package com.milesight.beaveriot.context.integration.model.dto;
 
-import com.milesight.beaveriot.canvas.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
 import lombok.Data;
 
 /**

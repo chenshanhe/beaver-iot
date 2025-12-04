@@ -1,7 +1,7 @@
 package com.milesight.beaveriot.dashboard.service;
 
 import com.milesight.beaveriot.base.exception.ServiceException;
-import com.milesight.beaveriot.dashboard.enums.DashboardCoverType;
+import com.milesight.beaveriot.context.integration.enums.DashboardCoverType;
 import com.milesight.beaveriot.dashboard.enums.DashboardErrorCode;
 import com.milesight.beaveriot.dashboard.po.DashboardPO;
 import com.milesight.beaveriot.dashboard.po.DashboardPresetCoverPO;

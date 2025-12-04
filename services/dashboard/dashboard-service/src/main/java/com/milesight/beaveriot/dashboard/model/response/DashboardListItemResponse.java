@@ -1,6 +1,6 @@
 package com.milesight.beaveriot.dashboard.model.response;
 
-import com.milesight.beaveriot.dashboard.enums.DashboardCoverType;
+import com.milesight.beaveriot.context.integration.enums.DashboardCoverType;
 import lombok.*;
 
 /**

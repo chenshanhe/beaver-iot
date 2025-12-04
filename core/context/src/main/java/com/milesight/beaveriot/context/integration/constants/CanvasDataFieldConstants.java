@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.canvas.constants;
+package com.milesight.beaveriot.context.integration.constants;
 
 /**
  * CanvasDataFieldConstants class.

@@ -1,4 +1,4 @@
-package com.milesight.beaveriot.dashboard.model.response;
+package com.milesight.beaveriot.context.integration.model.response;
 
 /**
  * @author loong
