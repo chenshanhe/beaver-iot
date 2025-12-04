@@ -1,16 +1,15 @@
 package com.milesight.beaveriot.canvas.service;
 
 import com.milesight.beaveriot.base.utils.snowflake.SnowflakeUtil;
-import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
 import com.milesight.beaveriot.canvas.facade.ICanvasFacade;
-import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
-import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateRequest;
 import com.milesight.beaveriot.canvas.model.response.CanvasResponse;
 import com.milesight.beaveriot.canvas.po.CanvasPO;
 import com.milesight.beaveriot.canvas.repository.CanvasRepository;
+import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
+import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
+import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -68,18 +67,8 @@ public class CanvasFacadeImpl implements ICanvasFacade {
                 .eq(CanvasPO.Fields.attachType, attachType)
         );
 
-        if (CollectionUtils.isEmpty(canvasPOList)) {
-            return;
-        }
-
         List<Long> canvasIdList = canvasPOList.stream().map(CanvasPO::getId).toList();
-        deleteSubCanvases(canvasIdList);
-
         canvasService.doDeleteCanvasByIdList(canvasIdList);
-    }
-
-    private void deleteSubCanvases(List<Long> parentCanvasIdList) {
-        deleteCanvasByAttach(CanvasAttachType.CANVAS, parentCanvasIdList.stream().map(Object::toString).toList());
     }
 
     @Override
