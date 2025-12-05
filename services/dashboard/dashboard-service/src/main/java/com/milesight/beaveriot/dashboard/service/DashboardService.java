@@ -186,7 +186,7 @@ public class DashboardService implements DashboardServiceProvider {
 
     @Override
     public boolean isDashboardExist(Long dashboardId) {
-        return getDashboardById(dashboardId) != null;
+        return dashboardRepository.findOne(filterable -> filterable.eq(DashboardPO.Fields.id, dashboardId)).orElse(null) != null;
     }
 
     public CanvasDTO createDashboardCanvas(DashboardCanvasCreateRequest request, Long dashboardId) {
