@@ -60,7 +60,7 @@ public class DashboardCoverService {
 
         if (Objects.equals(coverType, DashboardCoverType.RESOURCE)) {
             resourceManagerFacade.linkByUrl(coverData, resourceRefDTO);
-        } else {
+        } else if (Objects.equals(coverType, DashboardCoverType.DEFAULT_IMAGE)){
             validatePresetCover(coverType, coverData);
         }
     }

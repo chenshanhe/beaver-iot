@@ -7,5 +7,5 @@ package com.milesight.beaveriot.context.integration.enums;
  * @date 2025/9/8
  */
 public enum DashboardCoverType {
-    DEFAULT_IMAGE, RESOURCE
+    DEFAULT_IMAGE, RESOURCE, LOCAL_IMAGE
 }
