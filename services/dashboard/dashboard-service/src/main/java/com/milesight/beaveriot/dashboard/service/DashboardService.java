@@ -3,19 +3,19 @@ package com.milesight.beaveriot.dashboard.service;
 import com.milesight.beaveriot.base.enums.ErrorCode;
 import com.milesight.beaveriot.base.exception.ServiceException;
 import com.milesight.beaveriot.base.utils.snowflake.SnowflakeUtil;
+import com.milesight.beaveriot.canvas.facade.ICanvasFacade;
 import com.milesight.beaveriot.context.api.DashboardServiceProvider;
 import com.milesight.beaveriot.context.integration.enums.CanvasAttachType;
-import com.milesight.beaveriot.canvas.facade.ICanvasFacade;
 import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
+import com.milesight.beaveriot.context.integration.model.request.DashboardBatchDeleteRequest;
+import com.milesight.beaveriot.context.integration.model.request.DashboardInfoRequest;
+import com.milesight.beaveriot.context.integration.model.response.CreateDashboardResponse;
 import com.milesight.beaveriot.context.security.SecurityUserContext;
 import com.milesight.beaveriot.dashboard.convert.DashboardConvert;
 import com.milesight.beaveriot.dashboard.enums.DashboardErrorCode;
 import com.milesight.beaveriot.dashboard.event.DashboardEvent;
-import com.milesight.beaveriot.context.integration.model.request.DashboardBatchDeleteRequest;
 import com.milesight.beaveriot.dashboard.model.request.DashboardCanvasCreateRequest;
-import com.milesight.beaveriot.context.integration.model.request.DashboardInfoRequest;
 import com.milesight.beaveriot.dashboard.model.request.SearchDashboardRequest;
-import com.milesight.beaveriot.context.integration.model.response.CreateDashboardResponse;
 import com.milesight.beaveriot.dashboard.model.response.DashboardCanvasItemResponse;
 import com.milesight.beaveriot.dashboard.model.response.DashboardListItemResponse;
 import com.milesight.beaveriot.dashboard.model.response.MainDashboardCanvasResponse;
@@ -31,11 +31,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -93,7 +89,9 @@ public class DashboardService implements DashboardServiceProvider {
         dashboardCoverService.applyCover(dashboardPO, dashboardInfoRequest.getCoverType(), dashboardInfoRequest.getCoverData());
         dashboardRepository.save(dashboardPO);
 
-        userFacade.associateResource(userId, ResourceType.DASHBOARD, Collections.singletonList(dashboardPO.getId()));
+        if (userId != null) {
+            userFacade.associateResource(userId, ResourceType.DASHBOARD, Collections.singletonList(dashboardPO.getId()));
+        }
 
         eventBus.publish(DashboardEvent.of(DashboardConvert.INSTANCE.convertDTO(dashboardPO), DashboardEvent.EventType.CREATED));
 
