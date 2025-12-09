@@ -7,6 +7,7 @@ import com.milesight.beaveriot.entity.dto.EntityResponse;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * CanvasResponse class.
@@ -25,4 +26,5 @@ public class CanvasResponse {
     private List<EntityResponse> entities;
     private List<String> deviceIds;
     private List<DeviceResponseData> devices;
+    private Map<String, Object> attributes;
 }

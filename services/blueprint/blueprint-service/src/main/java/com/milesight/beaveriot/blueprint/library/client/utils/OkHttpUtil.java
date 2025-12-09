@@ -23,7 +23,7 @@ public class OkHttpUtil {
         // Initialize OkHttpClient and set timeout
         client = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)  // Connection timeout
-                .readTimeout(120, TimeUnit.SECONDS)    // Read timeout
+                .readTimeout(10, TimeUnit.SECONDS)    // Read timeout
                 .writeTimeout(10, TimeUnit.SECONDS)    // Write timeout
                 .build();
     }

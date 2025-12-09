@@ -3,6 +3,8 @@ package com.milesight.beaveriot.dashboard.model.response;
 import com.milesight.beaveriot.context.integration.enums.DashboardCoverType;
 import lombok.*;
 
+import java.util.Map;
+
 /**
  * @author loong
  * @date 2024/10/18 9:45
@@ -19,5 +21,5 @@ public class DashboardListItemResponse {
     private String coverData;
     private String mainCanvasId;
     private String createdAt;
-
+    private Map<String, Object> attributes;
 }

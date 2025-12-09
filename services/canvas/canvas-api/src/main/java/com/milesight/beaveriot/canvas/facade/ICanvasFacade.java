@@ -6,6 +6,7 @@ import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateReq
 import com.milesight.beaveriot.canvas.model.response.CanvasResponse;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * ICanvasFacade class.
@@ -18,6 +19,8 @@ public interface ICanvasFacade {
     CanvasResponse getCanvasData(Long canvasId);
 
     CanvasDTO createCanvas(String name, CanvasAttachType attachType, String attachId);
+
+    CanvasDTO createCanvas(String name, CanvasAttachType attachType, String attachId, Map<String, Object> attributes);
 
     void updateCanvas(Long canvasId, CanvasUpdateRequest canvasUpdateRequest);
 

@@ -76,7 +76,7 @@ public class DashboardService implements DashboardServiceProvider {
         Long dashboardId = SnowflakeUtil.nextId();
 
         // build default canvas
-        CanvasDTO defaultCanvasPO = canvasFacade.createCanvas(dashboardInfoRequest.getName(), CanvasAttachType.DASHBOARD, dashboardId.toString());
+        CanvasDTO defaultCanvasPO = canvasFacade.createCanvas(dashboardInfoRequest.getName(), CanvasAttachType.DASHBOARD, dashboardId.toString(), dashboardInfoRequest.getMainCanvasAttributes());
         Long defaultCanvasId = defaultCanvasPO.getId();
 
         // build dashboard
@@ -86,6 +86,7 @@ public class DashboardService implements DashboardServiceProvider {
         dashboardPO.setName(name);
         dashboardPO.setMainCanvasId(defaultCanvasId);
         dashboardPO.setDescription(dashboardInfoRequest.getDescription());
+        dashboardPO.setAttributes(dashboardInfoRequest.getAttributes());
         dashboardCoverService.applyCover(dashboardPO, dashboardInfoRequest.getCoverType(), dashboardInfoRequest.getCoverData());
         dashboardRepository.save(dashboardPO);
 

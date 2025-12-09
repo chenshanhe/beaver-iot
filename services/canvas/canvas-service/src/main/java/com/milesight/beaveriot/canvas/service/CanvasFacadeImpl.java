@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -35,12 +36,18 @@ public class CanvasFacadeImpl implements ICanvasFacade {
 
     @Override
     public CanvasDTO createCanvas(String name, CanvasAttachType attachType, String attachId) {
+        return createCanvas(name, attachType, attachId, null);
+    }
+
+    @Override
+    public CanvasDTO createCanvas(String name, CanvasAttachType attachType, String attachId, Map<String, Object> attributes) {
         Long canvasId = SnowflakeUtil.nextId();
         CanvasPO canvasPO = new CanvasPO();
         canvasPO.setId(canvasId);
         canvasPO.setName(name);
         canvasPO.setAttachType(attachType);
         canvasPO.setAttachId(attachId);
+        canvasPO.setAttributes(attributes);
         canvasRepository.save(canvasPO);
         return covertPOToDTO(canvasPO);
     }

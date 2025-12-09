@@ -90,6 +90,7 @@ public class CanvasService {
         canvasResponse.setName(canvasPO.getName());
         canvasResponse.setAttachId(canvasPO.getAttachId());
         canvasResponse.setAttachType(canvasPO.getAttachType());
+        canvasResponse.setAttributes(canvasPO.getAttributes());
 
         List<CanvasWidgetPO> canvasWidgetPOList = canvasWidgetRepository.findAll(f -> f.eq(CanvasWidgetPO.Fields.canvasId, canvasId));
         canvasResponse.setWidgets(canvasWidgetPOList.stream().map(canvasWidgetPO -> {

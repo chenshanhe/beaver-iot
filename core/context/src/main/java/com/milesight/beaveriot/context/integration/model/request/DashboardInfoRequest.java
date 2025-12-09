@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * @author simon
  * @date 2025/9/8
@@ -23,4 +25,7 @@ public class DashboardInfoRequest {
 
     private String coverData;
 
+    private Map<String, Object> attributes;
+
+    private Map<String, Object> mainCanvasAttributes;
 }

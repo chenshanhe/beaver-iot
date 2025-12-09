@@ -7,6 +7,8 @@ import com.milesight.beaveriot.context.integration.model.dto.CanvasDTO;
 import com.milesight.beaveriot.context.integration.model.request.CanvasUpdateRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * @author Luxb
  * @date 2025/12/4 9:42
@@ -20,8 +22,8 @@ public class CanvasServiceProviderImpl implements CanvasServiceProvider {
     }
 
     @Override
-    public CanvasDTO createCanvas(String name, CanvasAttachType attachType, String attachId) {
-        return canvasFacade.createCanvas(name, attachType, attachId);
+    public CanvasDTO createCanvas(String name, CanvasAttachType attachType, String attachId, Map<String, Object> attributes) {
+        return canvasFacade.createCanvas(name, attachType, attachId, attributes);
     }
 
     @Override
