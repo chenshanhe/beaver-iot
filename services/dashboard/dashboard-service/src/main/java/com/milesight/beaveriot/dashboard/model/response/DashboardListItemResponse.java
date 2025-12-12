@@ -1,5 +1,6 @@
 package com.milesight.beaveriot.dashboard.model.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.milesight.beaveriot.context.integration.enums.DashboardCoverType;
 import com.milesight.beaveriot.dashboard.model.DashboardAttribute;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class DashboardListItemResponse implements Comparable<DashboardListItemRe
     private String createdAt;
     private Map<String, Object> attributes;
 
+    @JsonIgnore
     public Integer getOrder() {
         if (attributes == null) {
             return null;
