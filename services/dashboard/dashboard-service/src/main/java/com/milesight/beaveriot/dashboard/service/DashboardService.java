@@ -173,10 +173,7 @@ public class DashboardService implements DashboardServiceProvider {
                         () -> dashboardResponseList.forEach(dashboardResponse -> dashboardResponse.setHome(false))
                 );
 
-        dashboardResponseList.sort(Comparator.comparing(
-                DashboardListItemResponse::getHome, Comparator.nullsLast(Comparator.reverseOrder()))
-                .thenComparing(DashboardListItemResponse::getCreatedAt, Comparator.nullsLast(Comparator.reverseOrder()))
-        );
+        Collections.sort(dashboardResponseList);
         return dashboardResponseList;
     }
 
