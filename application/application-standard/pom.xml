@@ -243,25 +243,7 @@
 
         <dependency>
             <groupId>com.milesight.beaveriot.integrations</groupId>
-            <artifactId>msc-integration</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.milesight.beaveriot.integrations</groupId>
             <artifactId>milesight-gateway</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.milesight.beaveriot.integrations</groupId>
-            <artifactId>mqtt-device</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.milesight.beaveriot.integrations</groupId>
-            <artifactId>camthink-ai-inference</artifactId>
             <version>${project.version}</version>
         </dependency>
 
