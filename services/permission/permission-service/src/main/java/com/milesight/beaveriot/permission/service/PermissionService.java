@@ -50,12 +50,7 @@ public class PermissionService implements IPermissionFacade {
     WorkflowPermissionService workflowPermissionService;
 
     private Long getContextUserId() {
-        Long userId = SecurityUserContext.getUserId();
-        if (userId == null) {
-            throw ServiceException.with(ErrorCode.FORBIDDEN_PERMISSION).detailMessage("user not logged in").build();
-        }
-
-        return userId;
+        return SecurityUserContext.getUserId();
     }
 
     @Override
@@ -88,13 +83,20 @@ public class PermissionService implements IPermissionFacade {
     }
 
     public PermissionDTO getDataPermission(DataPermissionType type) {
-        Long userId = getContextUserId();
-        PermissionDTO permissionDTO = switch (type) {
-            case ENTITY -> entityPermissionService.getEntityPermission(userId);
-            case DEVICE -> devicePermissionService.getDevicePermission(userId);
-            case DASHBOARD -> dashboardPermissionService.getDashboardPermission(userId);
-            case WORKFLOW -> workflowPermissionService.getWorkflowPermission(userId);
-        };
+        Long userId = SecurityUserContext.getUserId();
+        PermissionDTO permissionDTO;
+
+        if (userId != null) {
+            permissionDTO = switch (type) {
+                case ENTITY -> entityPermissionService.getEntityPermission(userId);
+                case DEVICE -> devicePermissionService.getDevicePermission(userId);
+                case DASHBOARD -> dashboardPermissionService.getDashboardPermission(userId);
+                case WORKFLOW -> workflowPermissionService.getWorkflowPermission(userId);
+            };
+        } else {
+            permissionDTO = new PermissionDTO();
+            permissionDTO.setIds(new ArrayList<>());
+        }
 
         if (permissionDTO == null) {
             throw ServiceException.with(ErrorCode.PARAMETER_SYNTAX_ERROR).detailMessage("unknown data permission type").build();
