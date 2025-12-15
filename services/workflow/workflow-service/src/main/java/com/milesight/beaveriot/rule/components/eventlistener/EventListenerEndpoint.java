@@ -3,6 +3,7 @@ package com.milesight.beaveriot.rule.components.eventlistener;
 import com.milesight.beaveriot.rule.annotations.OutputArguments;
 import com.milesight.beaveriot.rule.annotations.RuleNode;
 import com.milesight.beaveriot.rule.annotations.UriParamExtension;
+import com.milesight.beaveriot.rule.components.eventlistener.model.EntityDataContent;
 import com.milesight.beaveriot.rule.constants.RuleNodeType;
 import lombok.Data;
 import org.apache.camel.Category;
@@ -29,10 +30,15 @@ public class EventListenerEndpoint extends DefaultEndpoint {
     @UriPath
     @Metadata(required = true, autowired = true)
     private String eventListenerName;
-    @UriParamExtension(uiComponent = "entityMultipleSelect")
+//    @UriParamExtension(uiComponent = "entityMultipleSelect")
+//    @UriParam(displayName = "Entity Listening Setting", description = "The entities to listen for events")
+//    @OutputArguments
+    private List<String> entities;
+
+    @UriParamExtension(uiComponent = "entityDataSelect")
     @UriParam(displayName = "Entity Listening Setting", description = "The entities to listen for events")
     @OutputArguments
-    private List<String> entities;
+    private EntityDataContent entityData;
 
     @Metadata(required = true, autowired = true, defaultValue = "false")
     @UriParam(displayName = "verifyEntitiesValidation", description = "Whether it is necessary to verify the legality of the entity")

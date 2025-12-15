@@ -77,4 +77,15 @@ public interface EntityTagMappingRepository extends BaseJpaRepository<EntityTagM
             """, nativeQuery = true)
     List<Long> findEntityIdsByTagIsNotEmpty();
 
+    @Query(
+            value = """
+                            SELECT e."key"
+                            FROM t_entity_tag_mapping m
+                            INNER JOIN t_entity e
+                            ON e.id = m.entity_id
+                            WHERE m.tag_id IN :tagIds
+                    """, nativeQuery = true
+    )
+    List<String> findEntityKeysByTagIdIn(@Param("tagIds") List<Long> tagIds);
+
 }
