@@ -214,6 +214,7 @@ public class EntityService implements EntityServiceProvider {
                 entityId = dataEntityPO.getId();
                 entityPO.setCreatedAt(dataEntityPO.getCreatedAt());
             }
+            entity.setId(entityId);
             entityPO.setId(entityId);
             entityPO.setUserId(userId);
             entityPO.setKey(entity.getKey());
@@ -543,6 +544,11 @@ public class EntityService implements EntityServiceProvider {
     @Override
     public Map<Long, List<EntityTag>> findTagsByIds(List<Long> entityIds) {
         return entityTagService.entityIdToTags(entityIds);
+    }
+
+    @Override
+    public Boolean isEntityExist(Long id) {
+        return entityRepository.existsById(id);
     }
 
     public Page<EntityResponse> search(EntityQuery entityQuery) {

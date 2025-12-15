@@ -38,4 +38,5 @@ public interface EntityServiceProvider {
 
     Map<Long, List<EntityTag>> findTagsByIds(List<Long> entityIds);
 
+    Boolean isEntityExist(Long id);
 }
